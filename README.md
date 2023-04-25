@@ -9,6 +9,7 @@ This project contains the illustration of how the model works on a simple web pa
 Note: 
 1. Find the link to the video walkthrough [Here](https://www.example.com)
 2. Deployed version of the web pages [Here](https://cancer-prediction-vsk4.onrender.com/)
+3. Contribution score sheet [Here](https://docs.google.com/spreadsheets/d/14-ls86QCv2KKoqrPz4kAM8NpCqeezhqbqEZ5VeXin-U/edit#gid=0)
 
 ## Packages Used
 

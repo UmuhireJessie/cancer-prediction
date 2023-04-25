@@ -7,7 +7,7 @@
 This project contains the illustration of how the model works on a simple web page using Flask; a python framework. The app has been deployed on Render, a unified cloud platform used for building and running all types of apps and websites. On the web page, one will be able to enter the level of each feature (integers) and submit those level through a form present on the app. After that the data is fed into the trained model and gives the output or the prediction. The project also contains a jupiter notebook file that shows steps followed in trainining the data used on the web page which is found in `model` folder. 
 
 Note: 
-1. Find the link to the video walkthrough [Here](https://www.example.com)
+1. Find the link to the video walkthrough [Here](https://drive.google.com/file/d/1AVDgYoBB0HfFmyJ0sjr4w_f69gik9CL6/view?usp=sharing)
 2. Deployed version of the web pages [Here](https://cancer-prediction-vsk4.onrender.com/)
 3. Contribution score sheet [Here](https://docs.google.com/spreadsheets/d/14-ls86QCv2KKoqrPz4kAM8NpCqeezhqbqEZ5VeXin-U/edit#gid=0)
 

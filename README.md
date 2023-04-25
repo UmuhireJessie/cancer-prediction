@@ -26,14 +26,14 @@ To run the project locally, there is a need to have Visual Studio Code (vs code)
 1. Clone the project 
 
 ``` bash
-git clone https://github.com/UmuhireJessie/cancer-pred.git
+git clone https://github.com/UmuhireJessie/cancer-prediction.git
 
 ```
 
 2. Open the project with vs code
 
 ``` bash
-cd cancer-pred
+cd cancer-prediction
 code .
 ```
 

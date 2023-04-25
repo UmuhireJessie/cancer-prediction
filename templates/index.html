@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cancer Prediction</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link
+        href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="../static/css/creative.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">TEAM KNIGHT</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#predict">Predict</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header id="home">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Welcome to Our Trained Cancer Prediction Model</h1>
+                <hr>
+                <p>Test your level of getting cancer and prevent costly late treatment of lung cancer! Just enter the
+                    level of each feature indicated, and see which level you are at! </p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="predict-heading">We've got what can help you!</h2>
+                    <hr class="light">
+                    <p class="text-faded">The model utilizes the naive Bayes algorithm to assess the likelihood of a
+                        patient developing lung cancer based on specific risk factors. While there are many features
+                        that the user must input to utilize the model, we have used a correlation matrix to determine
+                        the top 10 features that demonstrate the highest correlation with the "Level" variable. Each of
+                        these 10 features are integers, where a negative integer is considered to be a low level of a
+                        certain feature whereas positive integer is the opposite. To generate predictions, the user must
+                        input the corresponding level of each feature, and click the submit button.</p>
+                    <a href="#predict" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="predict">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="predict-heading">Test the model</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form action="{{url_for('predict')}}" method="post" id="prediction-form">
+                <div class="">
+
+                    <label for="obseity"><b>Obseity</b></label>
+                    <input type="number" name="obseity" id="obseity" required>
+
+                    <label for="coughing blood"><b>Coughing blood</b></label>
+                    <input type="number" name="psw" id="coughing blood" required>
+
+                    <label for="alcohol use"><b>Alcohol use</b></label>
+                    <input type="number" name="psw-repeat" id="alcohol use" required>
+
+                    <label for="dust allergy"><b>Dust allergy</b></label>
+                    <input type="number" name="dust allergy" id="dust allergy" required>
+
+                    <label for="balanced diet"><b>Balanced diet</b></label>
+                    <input type="number" name="balanced diet" id="balanced diet" required>
+
+                    <label for="passive smoker"><b>Passive smoker</b></label>
+                    <input type="number" name="passive smoker" id="passive smoker" required>
+
+                    <label for="genetic risk"><b>Genetic risk</b></label>
+                    <input type="number" name="genetic risk" id="genetic risk" required>
+
+                    <label for="occupational hazards"><b>Occupational Hazards</b></label>
+                    <input type="number" name="Occupational hazards" id="occupational hazards" required>
+
+                    <label for="chest pain"><b>Chest pain</b></label>
+                    <input type="number" name="chest pain" id="chest pain" required>
+
+                    <label for="air pollution"><b>Air pollution</b></label>
+                    <input type="number" name="air pollution" id="air pollution" required>
+
+                    <button type="submit" class="btn-primary btn-xl btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <div id="pred">
+                <p>Your likelihood of having lung cancer is: <strong><span class="text-primary"
+                            id="prediction">{{prediction}}</span></strong></p>
+            </div>
+
+        </div>
+    </section>
+     <script src="../static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/js/creative.min.js"></script>
+
+</body>
+
+</html>
